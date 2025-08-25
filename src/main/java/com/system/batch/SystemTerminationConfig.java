@@ -81,4 +81,15 @@ public class SystemTerminationConfig {
                 }, transactionManager)
                 .build();
     }
+
+//    Chunk 처리 예시
+//    @Bean
+//    public Step processStep(JobRepository jobRepository, PlatformTransactionManager transactionManager) {
+//        return new StepBuilder("processStep", jobRepository)
+//                .<CustomerDetail, CustomerSummary>chunk(10, transactionManager)  // 청크 지향 처리 활성화
+//                .reader(itemReader())       // 데이터 읽기 담당
+//                .processor(itemProcessor()) // 데이터 처리 담당
+//                .writer(itemWriter())      // 데이터 쓰기 담당
+//                .build();
+//    }
 }
